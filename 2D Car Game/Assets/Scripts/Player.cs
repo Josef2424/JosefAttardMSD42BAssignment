@@ -5,6 +5,7 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float health = 100f;
 
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
@@ -21,6 +22,28 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    private void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
+
+        if (!dmgDealer)
+        {
+            return;
+        }
+
+        ProcessHit(dmgDealer);
+    }
+
+    private void ProcessHit(DamageDealer dmgDealer)
+    {
+        health -= dmgDealer.GetDamage();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void SetUpMoveBoundaries()

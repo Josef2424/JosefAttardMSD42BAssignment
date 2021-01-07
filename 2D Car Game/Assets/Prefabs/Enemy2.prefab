@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1998889121350790237}
   - component: {fileID: 1998889121350790238}
-  m_Layer: 0
+  - component: {fileID: 6185694899098018678}
+  - component: {fileID: -6539090185547230467}
+  - component: {fileID: -4561550496703625352}
+  m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,3 +85,84 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6185694899098018678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998889121350790239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d916f60372e540419732ddbbb2eb6a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  waveConfig: {fileID: 0}
+--- !u!114 &-6539090185547230467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998889121350790239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379eca0cd7962024a963b489ee26351c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
+  enemyLaserPrefab: {fileID: 3017566375494189621, guid: d9a7d27ddbcc70f4bab882644a9240a1, type: 3}
+  enemyLaserSpeed: 1
+--- !u!60 &-4561550496703625352
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998889121350790239}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.42, y: 3}
+    newSize: {x: 1.42, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.52, y: -0.29999998}
+      - {x: 0.59999996, y: -0.25}
+      - {x: 0.61, y: -0.22}
+      - {x: 0.61, y: -0.16}
+      - {x: 0.59, y: -0.13}
+      - {x: 0.51, y: -0.14}
+      - {x: 0.53, y: 0.5}
+      - {x: 0.53, y: 1}
+      - {x: 0.42999998, y: 1.24}
+      - {x: 0.26, y: 1.27}
+      - {x: -0.48, y: 1.27}
+      - {x: -0.59999996, y: 0.98999995}
+      - {x: -0.59999996, y: 0.39}
+      - {x: -0.59, y: -0.14}
+      - {x: -0.66999996, y: -0.14}
+      - {x: -0.66999996, y: -0.25}
+      - {x: -0.58, y: -0.31}
+      - {x: -0.61, y: -0.91999996}
+      - {x: -0.56, y: -1.06}
+      - {x: -0.29999998, y: -1.26}
+      - {x: 0.16, y: -1.26}
+      - {x: 0.35, y: -1.17}
+      - {x: 0.47, y: -1.06}
+      - {x: 0.56, y: -0.88}

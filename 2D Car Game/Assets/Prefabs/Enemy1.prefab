@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 4361819034884675297}
   - component: {fileID: 4361819034884675298}
   - component: {fileID: 949663536566430066}
-  m_Layer: 0
+  - component: {fileID: -4157314914318226117}
+  - component: {fileID: 909362490451190895}
+  m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,8 +97,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d916f60372e540419732ddbbb2eb6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1563366959895748855, guid: 6e164d949b3fb0446bb73d6fa66030ad, type: 3}
-  - {fileID: 249649939937471583, guid: edb44f6d01e3e104fbb01d63d4e65c12, type: 3}
-  - {fileID: 2352169597606234590, guid: 7e7876079de4add43a4ee6b6341f6ebc, type: 3}
-  enemyMoveSpeed: 2
+  waypoints: []
+  waveConfig: {fileID: 0}
+--- !u!114 &-4157314914318226117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361819034884675299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379eca0cd7962024a963b489ee26351c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 2
+  enemyLaserPrefab: {fileID: 3017566375494189621, guid: d9a7d27ddbcc70f4bab882644a9240a1, type: 3}
+  enemyLaserSpeed: 1.5
+--- !u!60 &909362490451190895
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361819034884675299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.56, y: 3}
+    newSize: {x: 1.56, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.59999996, y: -1.14}
+      - {x: 0.64, y: -0.96999997}
+      - {x: 0.61, y: -0.65999997}
+      - {x: 0.58, y: -0.32999998}
+      - {x: 0.68, y: -0.32}
+      - {x: 0.69, y: -0.28}
+      - {x: 0.69, y: -0.19999999}
+      - {x: 0.66999996, y: -0.19999999}
+      - {x: 0.58, y: -0.21}
+      - {x: 0.62, y: 1.04}
+      - {x: 0.53, y: 1.38}
+      - {x: 0.45, y: 1.4}
+      - {x: -0.47, y: 1.4}
+      - {x: -0.55, y: 1.3399999}
+      - {x: -0.63, y: 1.05}
+      - {x: -0.61, y: 0.55}
+      - {x: -0.61, y: -0.17999999}
+      - {x: -0.7, y: -0.19}
+      - {x: -0.7, y: -0.29}
+      - {x: -0.59999996, y: -0.34}
+      - {x: -0.64, y: -1.03}
+      - {x: -0.61, y: -1.14}
+      - {x: -0.42, y: -1.38}
+      - {x: -0.29999998, y: -1.43}
+      - {x: 0.29, y: -1.43}
+      - {x: 0.35, y: -1.4}
+      - {x: 0.55, y: -1.23}
