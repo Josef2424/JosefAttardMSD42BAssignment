@@ -49,4 +49,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98b1bd4d766ccc741bd8130920f929b1, type: 2}
   - {fileID: 11400000, guid: 1f7f08c6d2137fb46b554e47e882a5f3, type: 2}
   - {fileID: 11400000, guid: 6da2b7d4439207e49a9797943509863a, type: 2}
-  looping: 0
+  looping: 1

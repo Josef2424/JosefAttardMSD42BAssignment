@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
 
-    float xMin, xMax, yMin, yMax;
+    float xMin, xMax;
 
     // Start is called before the first frame update
     void Start()
@@ -53,10 +53,6 @@ public class Player : MonoBehaviour
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
 
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
-
-
     }
 
     // Moves the Player car
@@ -66,10 +62,6 @@ public class Player : MonoBehaviour
         var newXPos = transform.position.x + deltaX;
         newXPos = Mathf.Clamp(newXPos, xMin, xMax);
 
-        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        var newYPos = transform.position.y + deltaY;
-        newYPos = Mathf.Clamp(newYPos, yMin, yMax);
-
-        this.transform.position = new Vector2(newXPos, newYPos);
+        this.transform.position = new Vector2(newXPos, transform.position.y);
     }
 }
