@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
 
+    [SerializeField] AudioClip playerDeathSound;
+    [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
+
     float xMin, xMax;
 
     // Start is called before the first frame update
@@ -42,8 +45,15 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
     }
 
     private void SetUpMoveBoundaries()
