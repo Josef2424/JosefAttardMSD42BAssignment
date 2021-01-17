@@ -120,7 +120,7 @@ MonoBehaviour:
   maxTimeBetweenShots: 3
   enemyLaserPrefab: {fileID: 0}
   enemyLaserSpeed: 0.3
-  deathVFX: {fileID: 0}
+  deathVFX: {fileID: 1017956653274378366, guid: c8815e6a2daff154bbe12707c5167d7a, type: 3}
   explosionDuration: 1
   enemyDeathSound: {fileID: 8300000, guid: 5610604c7e80549439ae69f563b86d08, type: 3}
   enemyDeathSoundVolume: 0.75
