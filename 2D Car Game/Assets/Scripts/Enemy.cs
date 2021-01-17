@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
     {
         DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
 
+        if (!dmgDealer)
+        {
+            return;
+        }
+
         ProcessHit(dmgDealer);
     }
 
