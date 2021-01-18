@@ -99,6 +99,8 @@ MonoBehaviour:
   health: 50
   moveSpeed: 10
   padding: 0.7
+  deathVFX: {fileID: 1017956653274378366, guid: c8815e6a2daff154bbe12707c5167d7a, type: 3}
+  explosionDuration: 1
   playerDeathSound: {fileID: 8300000, guid: 20866601f28ee8d459c4f12dfc77df04, type: 3}
   playerDeathSoundVolume: 0.75
 --- !u!60 &-2355784483571595872

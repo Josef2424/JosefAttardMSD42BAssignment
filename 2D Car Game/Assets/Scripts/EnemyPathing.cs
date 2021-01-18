@@ -9,6 +9,7 @@ public class EnemyPathing : MonoBehaviour
 
     [SerializeField] WaveConfig waveConfig;
 
+    int scoreValue = 5;
     int waypointIndex = 0;
 
     // Start is called before the first frame update
@@ -48,6 +49,7 @@ public class EnemyPathing : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            FindObjectOfType<GameSession>().AddToScore(scoreValue);
         }
     }
 

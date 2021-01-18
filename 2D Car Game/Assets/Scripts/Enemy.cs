@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 3f;
 
     [SerializeField] GameObject enemyLaserPrefab;
-
     [SerializeField] float enemyLaserSpeed = 0.3f;
 
     [SerializeField] GameObject deathVFX;
@@ -25,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] AudioClip shootSound;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;
+
+    [SerializeField] int scoreValue = 50;
 
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
@@ -56,6 +57,8 @@ public class Enemy : MonoBehaviour
         AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, enemyDeathSoundVolume);
 
         Destroy(explosion, explosionDuration);
+
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
     }
 
     void Start()

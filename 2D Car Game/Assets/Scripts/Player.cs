@@ -5,10 +5,13 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float health = 100f;
+    [SerializeField] int health = 100;
 
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
+
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration = 1f;
 
     [SerializeField] AudioClip playerDeathSound;
     [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
@@ -25,6 +28,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     private void OnTriggerEnter2D(Collider2D otherObject)
@@ -52,8 +60,11 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
 
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
+
+        Destroy(explosion, explosionDuration);
 
         FindObjectOfType<Level>().LoadGameOver();
     
